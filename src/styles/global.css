@@ -1,0 +1,169 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+
+:root {
+  --primary-100: hsl(24, 100%, 61%);
+  --primary-60: hsla(24, 100%, 61%, 0.6);
+
+  --accent-100: hsl(39, 79%, 54%);
+  --accent-60: hsl(39, 79%, 54%, 0.6);
+
+  --background: hsl(0, 0%, 8%);
+
+  --neutral-color-100: hsl(0, 0%, 100%);
+  --neutral-color-90: hsl(0, 0%, 100%, 0.9);
+  --neutral-color-80: hsl(0, 0%, 80%, 0.8);
+  --neutral-color-70: hsl(0, 0%, 70%, 0.7);
+  --neutral-color-60: hsl(0, 0%, 60%, 0.6);
+  --neutral-color-50: hsl(0, 0%, 50%, 0.5);
+  --neutral-color-40: hsl(0, 0%, 50%, 0.4);
+  --neutral-color-30: hsl(0, 0%, 50%, 0.3);
+  --neutral-color-20: hsl(0, 0%, 50%, 0.2);
+  --neutral-color-10: hsl(0, 0%, 50%, 0.1);
+
+  --background-color: hsl(0, 0%, 8%);
+
+  --box-shadow: 0 2px 6px rgba(var(--primary-100), 25%),
+    0 8px 24px rgba(var(--primary-100), 33%),
+    0 16px 32px rgba(var(--primary-100), 33%);
+}
+
+@font-face {
+  font-family: 'Atkinson';
+  src: url('/fonts/atkinson-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Atkinson';
+  src: url('/fonts/atkinson-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: 'Atkinson', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background: var(--background-color);
+  background-size: 100% 600px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: var(--neutral-color-80);
+  line-height: 1.7;
+}
+main {
+  width: 720px;
+  max-width: calc(100% - 2em);
+  margin: auto;
+  padding: 3em 1em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5rem 0;
+  color: rgb(var(--text-color-100));
+  line-height: 1.2;
+}
+h1 {
+  font-size: 3.052rem;
+}
+h2 {
+  font-size: 2.441rem;
+}
+h3 {
+  font-size: 1.953rem;
+}
+h4 {
+  font-size: 1.563rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+strong,
+b {
+  font-weight: 700;
+}
+a {
+  color: var(--primary-100);
+}
+a:hover {
+  color: var(--accent-100);
+}
+p {
+  margin-bottom: 1rem;
+}
+.prose p {
+  margin-bottom: 2rem;
+}
+textarea {
+  width: 100%;
+  font-size: 1rem;
+}
+input {
+  font-size: 1rem;
+}
+table {
+  width: 100%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+code {
+  padding: 2px 5px;
+  background-color: var(--text-color-70);
+  border-radius: 2px;
+}
+pre {
+  padding: 1.5em;
+  border-radius: 8px;
+}
+pre > code {
+  all: unset;
+}
+blockquote {
+  border-left: 4px solid var(--accent-100);
+  padding: 0 0 0 20px;
+  margin: 0px;
+  font-size: 1.333rem;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--primary-100);
+}
+@media (max-width: 720px) {
+  body {
+    font-size: 1rem;
+  }
+  main {
+    padding: 1rem;
+  }
+}
+
+.sr-only {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
+  /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
+}
